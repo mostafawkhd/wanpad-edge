@@ -30,7 +30,7 @@ validate_token()
 {
 	local data="$(echo '{}' | jq -c --arg token $1 '.token=$token')"
 
-	local val_status_code="$(post_api /wanpad/api/v1/auth/validate_token/ "$data" | jq -s 'add | .http_code')"
+	local val_status_code="$(post_api "${CONTROLLER_SCHEME}//${CONTROLLER_DOMAIN}:${CONTROLLER_API_PORT}" /wanpad/api/v1/auth/validate_token/ "$data" | jq -s 'add | .http_code')"
 
 	case $val_status_code in
 		200)
@@ -68,7 +68,7 @@ run_ztp_py()
 	export CONTROLLER_SCHEME
 	export CONTROLLER_DOMAIN
 	export CONTROLLER_API_PORT
-	export CONTROLLER_API_PATH
+	export CONTROLLER_API_PATH1
 
 	python3 /usr/local/share/wanpad/ztp/pnp-client.py
 }
