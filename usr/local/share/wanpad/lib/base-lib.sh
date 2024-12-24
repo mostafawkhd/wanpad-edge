@@ -116,5 +116,5 @@ post_api()
   local host_with_port="$1"
   local url="$2"
   local data="$3"
-	curl -s -X POST "${host_with_port}/${url}" -H 'Content-Type: application/json' -H "Authorization: Basic ${TOKEN}" -d "$data" -w "%{json}"
+	curl -s -X POST "${host_with_port}${url}" -H 'Content-Type: application/json' -H "Authorization: Basic ${TOKEN}" -d "$data" -w "%{json}"
 }
