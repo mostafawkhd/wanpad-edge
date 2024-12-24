@@ -24,6 +24,9 @@ Please Provide the following information:
 	read -r -p "WANPAD controller address: " "CONTROLLER_DOMAIN"
 	read -r -p "Your access token: " "TOKEN"
 	echo $CONTROLLER_DOMAIN $TOKEN
+	export CONTROLLER_DOMAIN
+	export TOKEN 
+
 }
 
 validate_token()
