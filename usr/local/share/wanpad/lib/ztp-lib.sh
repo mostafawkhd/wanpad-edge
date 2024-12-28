@@ -73,7 +73,7 @@ run_ztp_py()
 	#export CONTROLLER_SCHEME
 	export CONTROLLER_DOMAIN
 	export CONTROLLER_API_PORT
-	export CONTROLLER_API_PATH1
+	export CONTROLLER_API_PATH
 
 	python3 /usr/local/share/wanpad/ztp/pnp-client.py
 }
