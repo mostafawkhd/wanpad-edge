@@ -107,15 +107,15 @@ EOF
 
 get_api()
 {
-  local host_with_port="$1"
-  local url="$2"
+	local host_with_port="$1"
+	local url="$2"
 	curl -s -X GET "${host_with_port}${url}" -H 'Content-Type: application/json' -H "Authorization: Basic ${TOKEN}" -w "%{json}"
 }
 
 post_api()
 {
-  local host_with_port="$1"
-  local url="$2"
-  local data="$3"
+	local host_with_port="$1"
+	local url="$2"
+	local data="$3"
 	curl -s -X POST "${host_with_port}${url}" -H 'Content-Type: application/json' -H "Authorization: Basic ${TOKEN}" -d "$data" -w "%{json}"
 }
